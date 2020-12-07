@@ -11,18 +11,14 @@ export const frequencyDetector = async () => {
   let callbacks = []
 
   const init = async () => {
-    try {
-      await navigator.mediaDevices
-        .getUserMedia(USER_MEDIA_CONSTRAINTS)
-        .then((stream) => {
-          audioContext = new AudioContext()
-          analyser = audioContext.createAnalyser()
-          analyser.fftSize = FFT_SIZE
-          audioContext.createMediaStreamSource(stream).connect(analyser)
-        })
-    } catch (error) {
-      console.error(error)
-    }
+    await navigator.mediaDevices
+      .getUserMedia(USER_MEDIA_CONSTRAINTS)
+      .then((stream) => {
+        audioContext = new AudioContext()
+        analyser = audioContext.createAnalyser()
+        analyser.fftSize = FFT_SIZE
+        audioContext.createMediaStreamSource(stream).connect(analyser)
+      })
   }
 
   const update = () => {

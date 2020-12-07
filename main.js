@@ -2,10 +2,14 @@
 
 import { frequencyDetector } from './fd/index.js'
 ;(async function () {
-  const { start, stop, subscribe } = await frequencyDetector()
+  try {
+    const { start, stop, subscribe } = await frequencyDetector()
 
-  subscribe(console.log)
+    subscribe(console.log)
 
-  document.querySelector('#start').addEventListener('click', start)
-  document.querySelector('#stop').addEventListener('click', stop)
+    document.querySelector('#start').addEventListener('click', start)
+    document.querySelector('#stop').addEventListener('click', stop)
+  } catch (error) {
+    console.error(error)
+  }
 })()
