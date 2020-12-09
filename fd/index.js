@@ -11,22 +11,20 @@ export const frequencyDetector = async () => {
   let callbacks = []
 
   const init = async () => {
-    await navigator.mediaDevices
-      .getUserMedia(USER_MEDIA_CONSTRAINTS)
-      .then((stream) => {
-        audioContext = new AudioContext()
-        analyser = audioContext.createAnalyser()
-        analyser.fftSize = FFT_SIZE
-        audioContext.createMediaStreamSource(stream).connect(analyser)
-      })
+    const stream = await navigator.mediaDevices.getUserMedia(
+      USER_MEDIA_CONSTRAINTS
+    )
+    audioContext = new AudioContext()
+    analyser = audioContext.createAnalyser()
+    analyser.fftSize = FFT_SIZE
+    audioContext.createMediaStreamSource(stream).connect(analyser)
   }
 
   const update = () => {
     const buffer = new Float32Array(FFT_SIZE)
     analyser.getFloatTimeDomainData(buffer)
     const frequency = autoCorrelate(buffer, audioContext.sampleRate)
-    frequency &&
-      callbacks.forEach((fn) => fn(getNoteDataFromFrequency(frequency)))
+    callbacks.forEach((fn) => fn(getNoteDataFromFrequency(frequency || null)))
     rafID = requestAnimationFrame(update)
   }
 

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('./assets/bg.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.card {
+  width: 75%;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-clip: padding-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  padding: 12px;
+}
+
+.card .note {
+  font-size: 128px;
+  position: relative;
+}
+
+.card .note::after {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  direction: ltr;
+  font-size: 40%;
+  position: absolute;
+  top: 0;
+  right: -40px;
+}
+
+.card .note.note-up::after {
+  content: "arrow_drop_up";
+}
+.card .note.note-down::after {
+  content: "arrow_drop_down";
+}
+
+.card .frequency {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: right;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 12px 12px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card {
+    width: 25%;
+  }
+}
