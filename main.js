@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
     up: 'note-up',
     down: 'note-down',
   }
+  const MEASUREMENT_LIMIT = 1.1
   const noteElement = document.querySelector('#note')
   const frequencyElement = document.querySelector('#frequency')
   
@@ -19,9 +20,9 @@ window.addEventListener('load', () => {
         noteElement.textContent = note
         frequencyElement.textContent = frequency && `${frequency.toFixed(1)} Hz`
         noteElement.classList.remove(noteIconClasses.up, noteIconClasses.down)
-        if (deviation >= 1.1) {
+        if (deviation >= MEASUREMENT_LIMIT) {
           noteElement.classList.add([noteIconClasses.up])
-        } else if (deviation <= -1.1) {
+        } else if (deviation <= -MEASUREMENT_LIMIT) {
           noteElement.classList.add([noteIconClasses.down])
         }
       })
