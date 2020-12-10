@@ -2,7 +2,7 @@
 
 import { USER_MEDIA_CONSTRAINTS, FFT_SIZE } from './constants.js'
 import { autoCorrelate } from './algorithm.js'
-import { getNoteDataFromFrequency } from './helpers.js'
+import getDataFromFrequency from './getDataFromFrequency.js'
 
 export const frequencyDetector = async () => {
   let rafID
@@ -24,7 +24,9 @@ export const frequencyDetector = async () => {
     const buffer = new Float32Array(FFT_SIZE)
     analyser.getFloatTimeDomainData(buffer)
     const frequency = autoCorrelate(buffer, audioContext.sampleRate)
-    callbacks.forEach((fn) => fn(getNoteDataFromFrequency(frequency || null)))
+    callbacks.forEach((fn) =>
+      fn(frequency ? getDataFromFrequency(frequency) : {})
+    )
     rafID = requestAnimationFrame(update)
   }
 

@@ -1,5 +1,5 @@
 // Implements the ACF2+ algorithm
-// Original algorithm is taken from https://github.com/cwilso/PitchDetect
+// Source: https://github.com/cwilso/PitchDetect
 export const autoCorrelate = (buf, sampleRate) => {
   // Not enough signal check
   const RMS = Math.sqrt(buf.reduce((acc, el) => acc + el ** 2, 0) / buf.length)
