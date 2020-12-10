@@ -6,15 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frequency detector</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;600&display=swap" rel="stylesheet">
   <link href="./style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
   <div class="wrapper">
     <div class="card">
-      <p class="note" id="note"></p>
-      <p class="frequency" id="frequency"></p>
+      <div class="note-container">
+        <span id="note">C</span>
+        <span class="octave" id="octave">8</span>
+        <span class="deviation" id="deviation">arrow_drop_up</span>
+      </div>
+      <div class="frequency" id="frequency">233 Hz</div>
     </div>
   </div>
   <script type="module" src="./main.js"></script>

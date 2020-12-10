@@ -23,12 +23,12 @@ body {
 
 .card {
   width: 75%;
-  min-height: 400px;
+  min-height: 25rem;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.625rem);
+  border-radius: 0.625rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.18);
   background-clip: padding-box;
   display: flex;
   flex-direction: column;
@@ -36,41 +36,43 @@ body {
   align-items: center;
   color: #fff;
   position: relative;
-  padding: 12px;
+  padding: 0.75rem;
 }
 
-.card .note {
-  font-size: 128px;
+.note-container {
+  font-size: 8rem;
   position: relative;
 }
 
-.card .note::after {
+.deviation {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
   direction: ltr;
-  font-size: 40%;
+  font-size: 3.5rem;
   position: absolute;
   top: 0;
-  right: -40px;
+  right: -2.5rem;
 }
 
-.card .note.note-up::after {
-  content: "arrow_drop_up";
-}
-.card .note.note-down::after {
-  content: "arrow_drop_down";
+.octave {
+  font-size: 2rem;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0;
+  right: -1.25rem;
+  font-weight: 600;
 }
 
-.card .frequency {
-  font-size: 18px;
+.frequency {
+  font-size: 1.125rem;
   font-weight: 300;
   text-align: right;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 0 12px 12px 0;
+  padding: 0 0.75rem 0.75rem 0;
 }
 
 @media screen and (min-width: 768px) {

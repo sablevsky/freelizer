@@ -3,28 +3,32 @@
 import { frequencyDetector } from './fd/index.js'
 
 window.addEventListener('load', () => {
-  const noteIconClasses = {
-    up: 'note-up',
-    down: 'note-down',
-  }
-  const MEASUREMENT_LIMIT = 1.1
+  const MEASUREMENT_LIMIT = 1
   const noteElement = document.querySelector('#note')
   const frequencyElement = document.querySelector('#frequency')
-  
+  const deviationElement = document.querySelector('#deviation')
+  const octaveElement = document.querySelector('#octave')
+
+  const deviationIcons = {
+    up: 'arrow_drop_up',
+    down: 'arrow_drop_down',
+  }
+
   ;(async function () {
     try {
       const { start, subscribe } = await frequencyDetector()
       start()
-  
-      subscribe(({ frequency, note, deviation }) => {
+
+      subscribe(({ frequency, note, deviation, octave }) => {
         noteElement.textContent = note
         frequencyElement.textContent = frequency && `${frequency.toFixed(1)} Hz`
-        noteElement.classList.remove(noteIconClasses.up, noteIconClasses.down)
-        if (deviation >= MEASUREMENT_LIMIT) {
-          noteElement.classList.add([noteIconClasses.up])
-        } else if (deviation <= -MEASUREMENT_LIMIT) {
-          noteElement.classList.add([noteIconClasses.down])
-        }
+        octaveElement.textContent = octave
+        deviationElement.textContent =
+          deviation >= MEASUREMENT_LIMIT
+            ? deviationIcons.up
+            : deviation <= -MEASUREMENT_LIMIT
+            ? deviationIcons.down
+            : null
       })
     } catch (error) {
       console.error(error)
@@ -32,5 +36,3 @@ window.addEventListener('load', () => {
     }
   })()
 })
-
-
