@@ -1,4 +1,4 @@
-// Implements the ACF2+ algorithm
+// Implements modified ACF2+ algorithm
 // Source: https://github.com/cwilso/PitchDetect
 export const autoCorrelate = (buf, sampleRate) => {
   // Not enough signal check
