@@ -72,9 +72,9 @@ try {
 }
 ```
 ## `start`
-Function that launch process of sound listening. During this process all `functions-subscribers` are called on each animation frame.
+Function that launch process of sound listening. During this process all functions-subscribers are called on each animation frame.
 ## `stop`
-The opposite of `start`-function. It stops process of sound listening.
+The opposite of `start` function. It stops process of sound listening.
 
 ## `subscribe`
 Provides mechanism of subscription to sound listening stream.
@@ -115,9 +115,9 @@ subscribe(callbackExample)
 setTimeout(() => unsubscribe(callbackExample), 5000)
 ```
 ## Sources
-Link | Description
-   - | -
-["Simple pitch detection"](https://github.com/cwilso/PitchDetect) | Was taken the ACF2+ algorithm that returns frequency value from waveform
-["Equations for the Frequency Table"](https://pages.mtu.edu/~suits/NoteFreqCalcs.html) | Theory of music
-["Musical Note Frequency Calculator"](https://www.translatorscafe.com/unit-converter/en-US/calculator/note-frequency/) | Theory of music
-["guitardialogues"](https://guitardialogues.wordpress.com/) | - Theory of music
+### ACF2+ algorithm
+Original algorithm that returns frequency value from waveform was taken from ["Simple pitch detection"](https://github.com/cwilso/PitchDetect) repository.
+### Theory of music
+- ["Equations for the Frequency Table"](https://pages.mtu.edu/~suits/NoteFreqCalcs.html)
+- ["Musical Note Frequency Calculator"](https://www.translatorscafe.com/unit-converter/en-US/calculator/note-frequency/)
+- ["guitardialogues"](https://guitardialogues.wordpress.com/)
