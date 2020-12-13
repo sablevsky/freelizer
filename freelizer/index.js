@@ -4,7 +4,7 @@ import { USER_MEDIA_CONSTRAINTS, FFT_SIZE } from './constants.js'
 import { autoCorrelate } from './algorithm.js'
 import getDataFromFrequency from './getDataFromFrequency.js'
 
-export const frequencyDetector = async () => {
+export const freelizer = async () => {
   let rafID
   let audioContext
   let analyser

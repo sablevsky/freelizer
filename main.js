@@ -1,6 +1,6 @@
 'use strict'
 
-import { frequencyDetector } from './freelizer/index.js'
+import { freelizer } from './freelizer/index.js'
 
 window.addEventListener('load', () => {
   const MEASUREMENT_LIMIT = 1
@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
 
   ;(async function () {
     try {
-      const { start, subscribe } = await frequencyDetector()
+      const { start, subscribe } = await freelizer()
       start()
 
       subscribe(({ frequency, note, deviation, octave }) => {
