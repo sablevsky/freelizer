@@ -1,0 +1,28 @@
+{
+  "name": "freelizer",
+  "version": "1.0.0",
+  "description": "Simple package on pure JavaScript with Audio Web API usage that was made for purpose of calculation sound frequency from microphone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sablevsky/freelizer.git"
+  },
+  "keywords": [
+    "Web",
+    "Audio",
+    "API",
+    "Frequency",
+    "Pitch",
+    "Music",
+    "Note"
+  ],
+  "author": "sablevsky <sablevsky@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sablevsky/freelizer/issues"
+  },
+  "homepage": "https://github.com/sablevsky/freelizer#readme"
+}
