@@ -1,7 +1,15 @@
-# Frequency detector
-> Simple module on pure JavaScript with Audio Web API usage that was made for purpose of calculating sound frequency from microphone.
+# Freelizer
+> Simple package on pure JavaScript with Audio Web API usage that was made for purpose of calculating sound frequency from microphone.
 
 [Live example of usage](https://sablevsky.github.io/frequency-detector/)
+
+## Some important information
+Has been tested only in desktop and mobile Google Chrome version 87.0. 
+Package doesn't include polyfills. Stable work in other browsers isn't guaranteed.
+Requires support of Web Audio API.
+Has 0 dependencies from other packages.
+
+
 
 ## Data that library provides
 1. Frequency of sound from microphone.
@@ -16,7 +24,7 @@ import { frequencyDetector } from './fd'
 
 ;(async function () {
     try {
-      const { start, subscribe } = await frequencyDetector()
+      const { start, subscribe } = await freelizer()
       start()
       subscribe(console.log)
     } catch (error) {
@@ -25,13 +33,13 @@ import { frequencyDetector } from './fd'
 })()
 ```
 ## A little explanation for usage example
-Import `frequencyDetector` function
+Import `freelizer` function
 ```javascript
-import { frequencyDetector } from './fd'
+import { freelizer } from './fd'
 ```
-Call `frequencyDetector` function. Beware, that `frequencyDetector` is asynchronous. It returns an object that contains functions. Call of `frequencyDetector` asks for permission of using microphone.
+Call `freelizer` function. Beware, that `freelizer` is asynchronous. It returns an object that contains functions. Call of `freelizer` asks for permission of using microphone.
 ```javascript
-const { start, subscribe } = await frequencyDetector()
+const { start, subscribe } = await freelizer()
 ```
 Use `start()` function to launch process of sound listening.
 ```javascript
@@ -51,7 +59,7 @@ Example of console output:
   deviation: -1.0954682002749223,
 }
 ```
-## `frequencyDetector`
+## `freelizer`
 Asynchronous function that call returns an object that contains functions for library mainpulation. These functions are:
  * ```start()```
  * ```stop()```
@@ -59,14 +67,14 @@ Asynchronous function that call returns an object that contains functions for li
  * ```unsubscribe()```
 ### Calling example:
 ```javascript
-const { start, stop, subscribe, unsubscribe } = await frequencyDetector()
+const { start, stop, subscribe, unsubscribe } = await freelizer()
 ````
 ### Error handling
 Since the function is asynchronous it recommended to use `try/catch` statement.
 The most frequent cause of errors is situation when user blocks microphone usage. 
 ```javascript
 try {
-  const { start, subscribe } = await frequencyDetector()
+  const { start, subscribe } = await freelizer()
 } catch (error) {
   // Error handling goes here
 }
@@ -108,7 +116,7 @@ Remember that it doesn't work with annonymous functions.
 ### Usage
 Example that logs data in console for 5 seconds:
 ```javascript
-const { start, stop, subscribe, unsubscribe } = await frequencyDetector()
+const { start, stop, subscribe, unsubscribe } = await freelizer()
 start()
 const callbackExample = (data) => console.log(data)
 subscribe(callbackExample)
