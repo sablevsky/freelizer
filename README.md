@@ -1,7 +1,7 @@
 # Freelizer
 > Simple package on pure JavaScript with Audio Web API usage that was made for purpose of calculating sound frequency from microphone.
 
-[Live example of usage](https://sablevsky.github.io/frequency-detector/)
+[Live example of usage](https://sablevsky.github.io/freelizer/)
 
 ## Some important information
 Has been tested only in desktop and mobile Google Chrome version 87.0. 
