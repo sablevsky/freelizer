@@ -20,7 +20,7 @@ Has 0 dependencies from other packages.
 
 ## Usage example
 ```javascript
-import { frequencyDetector } from './fd'
+import { frequencyDetector } from 'freelizer'
 
 ;(async function () {
     try {
@@ -35,7 +35,7 @@ import { frequencyDetector } from './fd'
 ## A little explanation for usage example
 Import `freelizer` function
 ```javascript
-import { freelizer } from './fd'
+import { freelizer } from 'freelizer'
 ```
 Call `freelizer` function. Beware, that `freelizer` is asynchronous. It returns an object that contains functions. Call of `freelizer` asks for permission of using microphone.
 ```javascript
