@@ -22,7 +22,7 @@ Has 0 dependencies from other packages.
 ```javascript
 import { freelizer } from 'freelizer'
 
-;(async function () {
+;(async () => {
     try {
       const { start, subscribe } = await freelizer()
       start()
