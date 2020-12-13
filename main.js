@@ -1,6 +1,6 @@
 'use strict'
 
-import { frequencyDetector } from './fd/index.js'
+import { frequencyDetector } from './freelizer/index.js'
 
 window.addEventListener('load', () => {
   const MEASUREMENT_LIMIT = 1
