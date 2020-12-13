@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     down: 'arrow_drop_down',
   }
 
-  ;(async function () {
+  ;(async () => {
     try {
       const { start, subscribe } = await freelizer()
       start()
