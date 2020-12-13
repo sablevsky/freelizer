@@ -20,7 +20,7 @@ Has 0 dependencies from other packages.
 
 ## Usage example
 ```javascript
-import { frequencyDetector } from 'freelizer'
+import { freelizer } from 'freelizer'
 
 ;(async function () {
     try {
